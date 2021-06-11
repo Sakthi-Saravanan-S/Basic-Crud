@@ -1,0 +1,96 @@
+<div class="header-container">
+  <div class="faculty-header">Faculty</div>
+  <div class="routing-header">
+    <span class="routing-link">Faculty </span>
+    <span>></span>
+    <span class="routing-link">View Faculty</span>
+  </div>
+  <div class="button-info">
+    <button (click)="onEditFacultyClick()">Edit</button>
+  </div>
+</div>
+<div>
+  <div [formGroup]="fieldData" *ngIf="fieldData" class="screen-container">
+    <div *ngFor="let record of forms['sections']" class="tab-container">
+      <button class="accordion" (click)="onTabHeaderClick($event)">
+        {{ record.title }}
+        <span class="chevron top"></span>
+      </button>
+      <div class="accordion-content hide">
+        <div *ngFor="let field of record['fields']">
+          <div class="control-container" [ngSwitch]="field.fieldType">
+            <ng-container *ngSwitchCase="'singleText'">
+              <label>{{ field.properties.title }}</label
+              ><br />
+              <input
+                type="text"
+                class=""
+                [formControlName]="field['properties']['name']"
+                [attr.readOnly]="field.properties['readOnly'] ? true : null"
+                [placeholder]="
+                  field.properties['hintText']
+                    ? field.properties['hintText']
+                    : ''
+                "
+                [maxlength]="
+                  field.properties['inputSize']
+                    ? field.properties['inputSize']
+                    : null
+                "
+
+              />
+            </ng-container>
+            <ng-container *ngSwitchCase="'date'">
+              <label>{{ field.properties.title }}</label
+              ><br />
+              <input
+                type="date"
+                class=""
+                [formControlName]="field['properties']['name']"
+                [attr.readOnly]="field.properties['readOnly'] ? true : null"
+
+              />
+            </ng-container>
+            <ng-container *ngSwitchCase="'email'">
+              <label>{{ field.properties.title }}</label
+              ><br />
+              <input
+                type="email"
+                class=""
+                [formControlName]="field['properties']['name']"
+                [attr.readOnly]="field.properties['readOnly'] ? true : null"
+
+              />
+            </ng-container>
+            <ng-container *ngSwitchCase="'image'">
+              <label>{{ field.properties.title }}</label
+              ><br />
+              <img
+                class="sample-image"
+                src="assets/dummy-profile.png"
+                alt="Image not found"
+                width="200"
+                height="200"
+              />
+            </ng-container>
+            <ng-container *ngSwitchCase="'link'">
+              <label>{{ field.properties.title }}</label
+              ><br />
+              <select
+
+                [formControlName]="field['properties']['name']"
+              >
+                <option
+                  *ngFor="let opt of field.properties.link.options"
+                  [value]="opt.id"
+                >
+                  {{ opt.name }}
+                </option>
+              </select>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

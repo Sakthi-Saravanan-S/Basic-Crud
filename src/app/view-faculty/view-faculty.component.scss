@@ -1,0 +1,10 @@
+.accordion-content.show {
+  height: 100%;
+  transition: 0.15s ease-in;
+}
+.accordion-content.hide {
+  height: 0px;
+  overflow: hidden;
+  padding: 0 2rem;
+  transition: 0.15s ease-in;
+}

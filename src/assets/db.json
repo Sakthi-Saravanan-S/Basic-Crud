@@ -1,0 +1,188 @@
+{
+  "forms": {
+    "type": "tabbed",
+    "title": "Staff",
+    "module": "faculty",
+    "url": "/api/v1/faculty/view",
+    "enable_draft": "0",
+    "formType": "view",
+    "sections": [
+      {
+        "title": "BASIC INFORMATION",
+        "fields": [
+          {
+            "fieldType": "image",
+            "properties": {
+              "name": "c_profile_image",
+              "title": "Profile Image",
+              "hintText": null,
+              "required": false,
+              "readOnly": false,
+              "errorMessage": "Upload Profile Image",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false
+            }
+          },
+          {
+            "fieldType": "singleText",
+            "properties": {
+              "name": "c_firstname",
+              "title": "First Name",
+              "hintText": null,
+              "required": true,
+              "readOnly": false,
+              "errorMessage": "Please enter value for First Name",
+              "defaultValue": "",
+              "action": false,
+              "actionShowHide": false,
+              "inputSize": 250
+            }
+          },
+          {
+            "fieldType": "singleText",
+            "properties": {
+              "name": "c_lastname",
+              "title": "Last Name",
+              "hintText": null,
+              "required": true,
+              "readOnly": false,
+              "errorMessage": "Please enter value for Last Name",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false,
+              "inputSize": 250
+            }
+          },
+          {
+            "fieldType": "link",
+            "properties": {
+              "name": "c_employee_designation",
+              "title": "Designation",
+              "hintText": null,
+              "required": true,
+              "readOnly": false,
+              "errorMessage": "Please enter value for Designation",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false,
+              "link": {
+                "options": [
+                  {
+                    "id": "1",
+                    "name": "Founder & Chairman"
+                  },
+                  {
+                    "id": "2",
+                    "name": "Director"
+                  },
+                  {
+                    "id": "3",
+                    "name": "Board of Trustees"
+                  },
+                  {
+                    "id": "33",
+                    "name": "Office Assistant"
+                  },
+                  {
+                    "id": "34",
+                    "name": "Clerk"
+                  },
+                  {
+                    "id": "35",
+                    "name": "Accountant"
+                  },
+                  {
+                    "id": "36",
+                    "name": "Project Manager"
+                  },
+                  {
+                    "id": "37",
+                    "name": "Team Lead"
+                  },
+                  {
+                    "id": "38",
+                    "name": "Senior Software Engineer"
+                  },
+                  {
+                    "id": "39",
+                    "name": "Software Engineer"
+                  },
+                  {
+                    "id": "63",
+                    "name": "Engineering Manager"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "fieldType": "date",
+            "properties": {
+              "name": "c_date_of_joining",
+              "title": "Date of Joining",
+              "hintText": null,
+              "required": false,
+              "readOnly": false,
+              "errorMessage": "Please enter value for Date of Joining",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false,
+              "c_maximum_year": "2047-10-26T00:00:00+00:00",
+              "c_minimum_year": "1993-01-22T00:00:00+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "title": "PERSONAL INFORMATION",
+        "fields": [
+          {
+            "fieldType": "date",
+            "properties": {
+              "name": "c_dateofbirth",
+              "title": "DOB",
+              "hintText": null,
+              "required": true,
+              "readOnly": false,
+              "errorMessage": "Please enter value for DOB",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false,
+              "c_maximum_year": null,
+              "c_minimum_year": "1938-04-21T00:00:00+00:00"
+            }
+          },
+          {
+            "fieldType": "email",
+            "properties": {
+              "name": "c_email",
+              "title": "Email",
+              "hintText": null,
+              "required": true,
+              "readOnly": false,
+              "errorMessage": "Please enter value for Email",
+              "defaultValue": null,
+              "action": false,
+              "actionShowHide": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "fieldData": [
+    {
+      "id": "56",
+      "c_lastname": "Ganesan",
+      "c_firstname": "Venkatesh Kumar",
+      "c_gender": "M",
+      "c_dateofbirth": "555100200",
+      "c_email": "venky@anubavam.com",
+      "c_mobileno": "9597800624",
+      "c_date_of_joining": "1277058600",
+      "c_profile_image": null,
+      "c_employee_designation": "63"
+    }
+  ]
+}

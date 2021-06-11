@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.header-container {
+  border-bottom: 1px solid #a8a7a7;
+  padding: 1rem;
+  display: flex;
+  button {
+    background-color: #6470fe;
+    color: white;
+    border: none;
+    width: 60%;
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+.left-menu {
+  width: 25%;
+  box-shadow: 0px 0px 20px 5px #e7e7e7;
+  margin: 1rem;
+}
+.left-menu-info {
+  padding: 1rem;
+  .title {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .sub-title {
+    font-weight: lighter;
+    font-size: 0.75rem;
+    color: #7a7575;
+  }
+}
+.active,
+.left-menu-info:hover {
+  background-color: #dfdfdf;
+}
+.screen-container {
+  margin: 1rem;
+  box-shadow: 0px 0px 20px 5px #e7e7e7;
+  .accordion {
+    background-color: #ffffff;
+    color: #6470fe;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    font-weight: 900;
+    transition: 0.4s;
+  }
+  .active,
+  .accordion:hover {
+    background-color: #ccc;
+  }
+}
+.edit-page-container {
+  display: flex;
+}
+.edit-screen-container {
+  width: 75%;
+}
+.accordion-content {
+  padding: 1rem 2rem;
+  h1 {
+    margin-left: 2.2rem;
+  }
+  label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  input {
+    border: none;
+    width: 100%;
+    background-color: white !important;
+  }
+  input:focus {
+    outline: none !important;
+  }
+  select {
+    border: none;
+    width: 100%;
+    background-color: white !important;
+  }
+  select:focus {
+    outline: none !important;
+  }
+}
+.tab-container {
+  padding: 0.5rem 1rem;
+}
+.button-info {
+  position: absolute;
+  right: 20px;
+  width: 15%;
+  text-align: right;
+}
+.faculty-header {
+  padding-right: 1rem;
+  border-right: 1px solid #a8a7a7;
+}
+.routing-header {
+  padding: 0 1rem;
+}
+.routing-link {
+  padding: 0 0.5rem;
+}
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline;
+  height: 0.5em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+  float: right;
+}
+
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.control-container {
+  padding: 0.5rem;
+  border-bottom: 1px solid #b1b1b1;
+}
+.sample-image {
+  padding: 10px 0;
+}

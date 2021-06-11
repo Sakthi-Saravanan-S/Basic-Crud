@@ -1,0 +1,138 @@
+<div class="header-container">
+  <div class="faculty-header">Faculty</div>
+  <div class="routing-header">
+    <span class="routing-link">Faculty </span>
+    <span>></span>
+    <span class="routing-link">Edit Faculty</span>
+  </div>
+  <div class="button-info">
+    <button (click)="onBackClick()">Back</button>
+  </div>
+</div>
+<div class="edit-page-container">
+  <div *ngIf="forms" class="left-menu">
+    <div *ngFor="let record of forms['sections']" class="left-menu-info">
+      <div class="title">{{ record.title }}</div>
+      <div class="sub-title">Setup your {{ record.title }}</div>
+    </div>
+  </div>
+  <div class="edit-screen-container">
+    <div>
+      <div [formGroup]="fieldData" *ngIf="fieldData" class="screen-container">
+        <div
+          *ngFor="let record of forms['sections']"
+          class="edit-tab-container"
+        >
+          <h1 class="tab-title">{{ record.title }}</h1>
+          <div class="accordion-content">
+            <div *ngFor="let field of record['fields']">
+              <div class="control-container" [ngSwitch]="field.fieldType">
+                <ng-container *ngSwitchCase="'singleText'">
+                  <label
+                    [ngClass]="{ required: field['properties']['required'] }"
+                    >{{ field.properties.title }}</label
+                  ><br />
+                  <input
+                    type="text"
+                    class=""
+                    [formControlName]="field['properties']['name']"
+                    [attr.readOnly]="field.properties['readOnly'] ? true : null"
+                    [placeholder]="
+                      field.properties['hintText']
+                        ? field.properties['hintText']
+                        : ''
+                    "
+                    [maxlength]="
+                      field.properties['inputSize']
+                        ? field.properties['inputSize']
+                        : null
+                    "
+                  />
+                </ng-container>
+                <ng-container *ngSwitchCase="'date'">
+                  <label
+                    [ngClass]="{ required: field['properties']['required'] }"
+                    >{{ field.properties.title }}</label
+                  ><br />
+                  <input
+                    type="date"
+                    class=""
+                    [formControlName]="field['properties']['name']"
+                    [attr.readOnly]="field.properties['readOnly'] ? true : null"
+                  />
+                </ng-container>
+                <ng-container *ngSwitchCase="'email'">
+                  <label
+                    [ngClass]="{ required: field['properties']['required'] }"
+                    >{{ field.properties.title }}</label
+                  ><br />
+                  <input
+                    type="email"
+                    class=""
+                    [formControlName]="field['properties']['name']"
+                    [attr.readOnly]="field.properties['readOnly'] ? true : null"
+                    [placeholder]="
+                      field.properties['hintText']
+                        ? field.properties['hintText']
+                        : ''
+                    "
+                    [maxlength]="
+                      field.properties['inputSize']
+                        ? field.properties['inputSize']
+                        : null
+                    "
+                  />
+                </ng-container>
+                <ng-container *ngSwitchCase="'image'">
+                  <label
+                    [ngClass]="{ required: field['properties']['required'] }"
+                    >{{ field.properties.title }}</label
+                  ><br />
+                  <img
+                    class="sample-image"
+                    [src]="imageSource"
+                    alt="Image not found"
+                    width="200"
+                    height="200"
+                  />
+                  <input type="file" accept="image/*" (change)="updateImagePreview($event)" [formControlName]="field['properties']['name']">
+                </ng-container>
+                <ng-container *ngSwitchCase="'link'">
+                  <label
+                    [ngClass]="{ required: field['properties']['required'] }"
+                    >{{ field.properties.title }}</label
+                  ><br />
+                  <select [formControlName]="field['properties']['name']">
+                    <option value="">--&nbsp;Select&nbsp;--</option>
+                    <option
+                      *ngFor="let opt of field.properties.link.options"
+                      [value]="opt.id"
+                    >
+                      {{ opt.name }}
+                    </option>
+                  </select>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-container">
+  <div class="error-container">
+    <span *ngIf="showFormError" class="error-note"
+      >ENTER ALL THE REQUIRED FIELDS</span
+    >
+    <span *ngIf="showSuccessMsg" class="success-note"
+      >RECORD SAVED SUCCESSFULLY</span
+    >
+  </div>
+  <div class="footer-button-1">
+    <button (click)="onNextClick()">Next Step</button>
+  </div>
+  <div class="footer-button-2">
+    <button (click)="onSubmitClick()">Submit</button>
+  </div>
+</div>
